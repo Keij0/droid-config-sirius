@@ -86,4 +86,7 @@ Requires:
 # to make the maps happy, works since 1.1.7
 - geoclue-provider-hybris
 
+# Torch shortcut
+- jolla-settings-system-flashlight
+
 Summary: Jolla HW Adaptation sirius
