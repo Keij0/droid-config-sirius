@@ -1,6 +1,5 @@
 # Feel free to disable non-critical HA parts during devel by commenting lines out
 # Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
-
 Description: Pattern with packages for sirius HW Adaptation
 Name: jolla-hw-adaptation-sirius
 Requires:
@@ -73,15 +72,15 @@ Requires:
 - telepathy-ring
 
 # Hybris packages
- - libhybris-libEGL
- - libhybris-libGLESv2
- - libhybris-libwayland-egl
+- libhybris-libEGL
+- libhybris-libGLESv2
+- libhybris-libwayland-egl
 
 # Sensors
- - hybris-libsensorfw-qt5
+- hybris-libsensorfw-qt5
 
 # Needed for /dev/touchscreen symlink
- - qt5-plugin-generic-evdev
+- qt5-plugin-generic-evdev
 
 # to make the maps happy, works since 1.1.7
 - geoclue-provider-hybris
