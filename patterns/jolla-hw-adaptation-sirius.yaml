@@ -3,7 +3,6 @@
 Description: Pattern with packages for sirius HW Adaptation
 Name: jolla-hw-adaptation-sirius
 Requires:
-- pattern:jolla-hw-adaptation-hybris-droid-vibrator
 - pattern:jolla-ui-configuration-sirius
 
 - droid-hal-sirius
@@ -55,7 +54,7 @@ Requires:
 - usb-moded-diag-mode-android
 
 # from update13, this is needed explicitly
-- bluez-configs-sailfish
+#- bluez-configs-sailfish
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
@@ -87,5 +86,9 @@ Requires:
 
 # Torch shortcut
 - jolla-settings-system-flashlight
+
+# Vibra
+- ngfd-plugin-droid-vibrator
+- qt5-feedback-haptics-droid-vibrator
 
 Summary: Jolla HW Adaptation sirius
