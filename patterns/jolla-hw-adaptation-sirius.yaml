@@ -4,6 +4,8 @@ Description: Pattern with packages for sirius HW Adaptation
 Name: jolla-hw-adaptation-sirius
 Requires:
 - pattern:jolla-ui-configuration-sirius
+- pattern:jolla-hw-adaptation-hybris-droid-vibrator
+- pattern:jolla-hw-adaptation-hybris
 
 - droid-hal-sirius
 - droid-hal-sirius-img-boot
@@ -43,7 +45,7 @@ Requires:
 - usb-moded
 - usb-moded-defaults-android
 - usb-moded-developer-mode-android
-- usb-moded-pc-suite-mode-android
+#- usb-moded-pc-suite-mode-android
 
 # Extra useful modes not officially supported:
 # might need some configuration to get working
@@ -71,9 +73,9 @@ Requires:
 - telepathy-ring
 
 # Hybris packages
-- libhybris-libEGL
-- libhybris-libGLESv2
-- libhybris-libwayland-egl
+#- libhybris-libEGL
+#- libhybris-libGLESv2
+#- libhybris-libwayland-egl
 
 # Sensors
 - hybris-libsensorfw-qt5
@@ -88,7 +90,7 @@ Requires:
 - jolla-settings-system-flashlight
 
 # Vibra
-- ngfd-plugin-droid-vibrator
-- qt5-feedback-haptics-droid-vibrator
+#- ngfd-plugin-droid-vibrator
+#- qt5-feedback-haptics-droid-vibrator
 
 Summary: Jolla HW Adaptation sirius
