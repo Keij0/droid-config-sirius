@@ -1,4 +1,4 @@
-Description: Pattern with packages for @DEVICE@ HW Adaptation
+Description: Pattern with packages for sirius HW Adaptation
 Name: jolla-hw-adaptation-sirius
 Requires:
 - droid-hal-sirius
