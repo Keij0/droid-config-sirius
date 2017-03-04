@@ -1,12 +1,6 @@
-# Feel free to disable non-critical HA parts during devel by commenting lines out
-# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh
-Description: Pattern with packages for sirius HW Adaptation
+Description: Pattern with packages for @DEVICE@ HW Adaptation
 Name: jolla-hw-adaptation-sirius
 Requires:
-- pattern:jolla-ui-configuration-sirius
-- pattern:jolla-hw-adaptation-hybris-droid-vibrator
-- pattern:jolla-hw-adaptation-hybris
-
 - droid-hal-sirius
 - droid-hal-sirius-img-boot
 - droid-hal-sirius-kernel-modules
@@ -14,21 +8,33 @@ Requires:
 - droid-config-sirius-pulseaudio-settings
 - droid-config-sirius-policy-settings
 - droid-config-sirius-preinit-plugin
+- droid-config-sirius-flashing
+- droid-config-sirius-bluez4
 - droid-hal-version-sirius
 
+# Hybris packages
+- libhybris-libEGL
+- libhybris-libGLESv2
+- libhybris-libwayland-egl
+
+# Sensors
+- hybris-libsensorfw-qt5
+
+# Vibra
+- ngfd-plugin-droid-vibrator
+- qt5-feedback-haptics-droid-vibrator
+
+# Needed for /dev/touchscreen symlink
+- qt5-plugin-generic-evdev
+
 - pulseaudio-modules-droid
-- pulseaudio-modules-droid-glue
+# for audio recording to work:
+- qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
 # These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)
 - qt5-qtwayland-wayland_egl
 - qt5-qpa-hwcomposer-plugin
 - qtscenegraph-adaptation
-
-# GStreamer v0.10 multimedia support is being deprecated
-#- gstreamer0.10-droidcamsrc
-#- gstreamer0.10-omx
-#- gstreamer0.10-droideglsink
-#- nemo-qtmultimedia-plugins-gstvideotexturebackend
 
 # Add GStreamer v1.0 as standard
 - gstreamer1.0
@@ -36,6 +42,8 @@ Requires:
 - gstreamer1.0-plugins-base
 - gstreamer1.0-plugins-bad
 - nemo-gstreamer1.0-interfaces
+# For devices with droidmedia and gst-droid built, see HADK pdf for more information
+#- gstreamer1.0-droid
 
 # This is needed for notification LEDs
 - mce-plugin-libhybris
@@ -45,7 +53,6 @@ Requires:
 - usb-moded
 - usb-moded-defaults-android
 - usb-moded-developer-mode-android
-#- usb-moded-pc-suite-mode-android
 
 # Extra useful modes not officially supported:
 # might need some configuration to get working
@@ -53,44 +60,19 @@ Requires:
 # working but careful with roaming!
 - usb-moded-connection-sharing-android-config
 # android diag mode only usable for certain android tools
-- usb-moded-diag-mode-android
+#- usb-moded-diag-mode-android
 
-# from update13, this is needed explicitly
-#- bluez-configs-sailfish
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 - rfkill
 
 # enable device lock and allow to select untrusted software
 - jolla-devicelock-plugin-encsfa
 
-# For 1.1.7 only: provide settings layout for a device with valid GSM modem.
-# Updates after 1.1.7 will autodetect the modem presence during runtime and change
-# layout accordingly
-- jolla-settings-layout
-
-# Since 1.1.9 this needs to be added explicitly for cellular devices
-- pattern:jolla-sailfish-cellular-apps
-- telepathy-ring
-
-# Hybris packages
-#- libhybris-libEGL
-#- libhybris-libGLESv2
-#- libhybris-libwayland-egl
-
-# Sensors
-- hybris-libsensorfw-qt5
-
-# Needed for /dev/touchscreen symlink
-- qt5-plugin-generic-evdev
-
-# to make the maps happy, works since 1.1.7
+# For GPS
 - geoclue-provider-hybris
 
-# Torch shortcut
-- jolla-settings-system-flashlight
-
-# Vibra
-#- ngfd-plugin-droid-vibrator
-#- qt5-feedback-haptics-droid-vibrator
+# For FM radio on some QCOM devices
+#- qt5-qtmultimedia-plugin-mediaservice-irisradio
+#- jolla-mediaplayer-radio
 
 Summary: Jolla HW Adaptation sirius
